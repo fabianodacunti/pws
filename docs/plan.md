@@ -31,6 +31,12 @@ PWS
 └── 8 Project management
 ```
 
+The full WBS, with each work package colored by milestone:
+
+![PWS work breakdown structure](plan-wbs.svg)
+
+The editable source of this diagram is [plan-wbs.drawio](plan-wbs.drawio) (open it with [diagrams.net](https://app.diagrams.net/)).
+
 ---
 
 ## 2. Work packages (level 3)

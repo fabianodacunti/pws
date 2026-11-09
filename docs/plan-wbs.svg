@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1592" height="1340" viewBox="0 0 1592 1340" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="1592" height="1340" fill="#FFFFFF"/>
+<rect x="696.0" y="20" width="200" height="44" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="796.0" y="47" font-size="14" font-weight="bold" fill="#444441" text-anchor="middle">PWS</text>
+<path d="M796.0 64 L796.0 87.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M110.0 87.0 L1482.0 87.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M110.0 87.0 L110.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="20" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="110.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">1 Proof of concept</text>
+<path d="M28 164 L28 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M28 234.0 L36 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="36" y="194" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="44" y="212" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">1.1 PoC hardware</text>
+<text x="44" y="264" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M28 326.0 L36 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="36" y="286" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="44" y="304" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">1.2 PoC firmware</text>
+<text x="44" y="356" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M28 418.0 L36 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="36" y="378" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="44" y="396" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">1.3 Measurement</text>
+<text x="44" y="411" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">dashboard</text>
+<text x="44" y="448" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M28 510.0 L36 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="36" y="470" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="44" y="488" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">1.4 Experiments</text>
+<text x="44" y="540" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M306.0 87.0 L306.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="216" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="306.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">2 Sensor libraries</text>
+<path d="M224 164 L224 970.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M224 234.0 L232 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="194" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="212" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.1 Library template</text>
+<text x="240" y="264" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 326.0 L232 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="286" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="304" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.2 Temperature and</text>
+<text x="240" y="319" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">humidity sensor</text>
+<text x="240" y="334" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">library</text>
+<text x="240" y="356" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 418.0 L232 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="378" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="396" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.3 Pressure sensor</text>
+<text x="240" y="411" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">library</text>
+<text x="240" y="448" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 510.0 L232 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="470" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="488" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.4 Light sensor</text>
+<text x="240" y="503" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">library</text>
+<text x="240" y="540" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 602.0 L232 602.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="562" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="580" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.5 UV sensor library</text>
+<text x="240" y="632" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 694.0 L232 694.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="654" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="240" y="672" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">2.6 RTC library</text>
+<text x="240" y="724" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M224 786.0 L232 786.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="746" width="164" height="80" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="240" y="764" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">2.7 Wind and rain</text>
+<text x="240" y="779" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">sensor kit library</text>
+<text x="240" y="816" font-size="11" font-weight="normal" fill="#712B13" text-anchor="start">MS3</text>
+<path d="M224 878.0 L232 878.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="838" width="164" height="80" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="240" y="856" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">2.8 Particulate matter</text>
+<text x="240" y="871" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">sensor library</text>
+<text x="240" y="908" font-size="11" font-weight="normal" fill="#712B13" text-anchor="start">MS3</text>
+<path d="M224 970.0 L232 970.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="232" y="930" width="164" height="80" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="240" y="948" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">2.9 Lightning sensor</text>
+<text x="240" y="963" font-size="12" font-weight="bold" fill="#712B13" text-anchor="start">library</text>
+<text x="240" y="1000" font-size="11" font-weight="normal" fill="#712B13" text-anchor="start">MS3</text>
+<path d="M502.0 87.0 L502.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="412" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="502.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">3 Main firmware</text>
+<path d="M420 164 L420 1154.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M420 234.0 L428 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="194" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="436" y="212" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">3.1 Architecture</text>
+<text x="436" y="264" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2</text>
+<path d="M420 326.0 L428 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="286" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="304" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.2 Acquisition and</text>
+<text x="436" y="319" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">aggregation</text>
+<text x="436" y="356" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 418.0 L428 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="378" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="396" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.3 Clock and</text>
+<text x="436" y="411" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">synchronization</text>
+<text x="436" y="448" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 510.0 L428 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="470" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="488" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.4 Storage</text>
+<text x="436" y="540" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 602.0 L428 602.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="562" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="580" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.5 Connectivity</text>
+<text x="436" y="632" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 694.0 L428 694.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="654" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="672" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.6 MQTT and Home</text>
+<text x="436" y="687" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">Assistant</text>
+<text x="436" y="724" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 786.0 L428 786.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="746" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="764" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.7 External services</text>
+<text x="436" y="816" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 878.0 L428 878.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="838" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="856" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.8 Web page and API</text>
+<text x="436" y="908" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 970.0 L428 970.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="930" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="948" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.9 Configuration</text>
+<text x="436" y="1000" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 1062.0 L428 1062.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="1022" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="1040" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.10 Firmware update</text>
+<text x="436" y="1055" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">(OTA)</text>
+<text x="436" y="1092" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M420 1154.0 L428 1154.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="428" y="1114" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="436" y="1132" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">3.11 Diagnostics</text>
+<text x="436" y="1184" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M698.0 87.0 L698.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="608" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="698.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">4 Hardware</text>
+<path d="M616 164 L616 602.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M616 234.0 L624 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="624" y="194" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="632" y="212" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">4.1 Block diagram</text>
+<text x="632" y="264" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M616 326.0 L624 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="624" y="286" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="632" y="304" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">4.2 Wiring</text>
+<text x="632" y="356" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M616 418.0 L624 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="624" y="378" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="632" y="396" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">4.3 Bill of materials</text>
+<text x="632" y="448" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M616 510.0 L624 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="624" y="470" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="632" y="488" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">4.4 Power and</text>
+<text x="632" y="503" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">protection</text>
+<text x="632" y="540" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M616 602.0 L624 602.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="624" y="562" width="164" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="632" y="580" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">4.5 Electronics</text>
+<text x="632" y="595" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">assembly</text>
+<text x="632" y="632" font-size="11" font-weight="normal" fill="#0C447C" text-anchor="start">MS5</text>
+<path d="M894.0 87.0 L894.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="804" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="894.0" y="134.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">5 Mechanics and</text>
+<text x="894.0" y="150.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">installation</text>
+<path d="M812 164 L812 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M812 234.0 L820 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="820" y="194" width="164" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="828" y="212" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">5.1 Radiation shield</text>
+<text x="828" y="264" font-size="11" font-weight="normal" fill="#0C447C" text-anchor="start">MS5</text>
+<path d="M812 326.0 L820 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="820" y="286" width="164" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="828" y="304" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">5.2 Enclosure and</text>
+<text x="828" y="319" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">cabling</text>
+<text x="828" y="356" font-size="11" font-weight="normal" fill="#0C447C" text-anchor="start">MS5</text>
+<path d="M812 418.0 L820 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="820" y="378" width="164" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="828" y="396" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">5.3 Mast and mounts</text>
+<text x="828" y="448" font-size="11" font-weight="normal" fill="#0C447C" text-anchor="start">MS5</text>
+<path d="M812 510.0 L820 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="820" y="470" width="164" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="828" y="488" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">5.4 Site and</text>
+<text x="828" y="503" font-size="12" font-weight="bold" fill="#0C447C" text-anchor="start">installation</text>
+<text x="828" y="540" font-size="11" font-weight="normal" fill="#0C447C" text-anchor="start">MS5</text>
+<path d="M1090.0 87.0 L1090.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1000" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="1090.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">6 Validation</text>
+<path d="M1008 164 L1008 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M1008 234.0 L1016 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1016" y="194" width="164" height="80" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="1024" y="212" font-size="12" font-weight="bold" fill="#3C3489" text-anchor="start">6.1 Bench tests</text>
+<text x="1024" y="264" font-size="11" font-weight="normal" fill="#3C3489" text-anchor="start">MS2, MS3</text>
+<path d="M1008 326.0 L1016 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1016" y="286" width="164" height="80" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="1024" y="304" font-size="12" font-weight="bold" fill="#27500A" text-anchor="start">6.2 Long-run test</text>
+<text x="1024" y="356" font-size="11" font-weight="normal" fill="#27500A" text-anchor="start">MS6</text>
+<path d="M1008 418.0 L1016 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1016" y="378" width="164" height="80" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="1024" y="396" font-size="12" font-weight="bold" fill="#27500A" text-anchor="start">6.3 Comparison with</text>
+<text x="1024" y="411" font-size="12" font-weight="bold" fill="#27500A" text-anchor="start">official stations</text>
+<text x="1024" y="448" font-size="11" font-weight="normal" fill="#27500A" text-anchor="start">MS6</text>
+<path d="M1008 510.0 L1016 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1016" y="470" width="164" height="80" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="1024" y="488" font-size="12" font-weight="bold" fill="#27500A" text-anchor="start">6.4 Adjustments</text>
+<text x="1024" y="540" font-size="11" font-weight="normal" fill="#27500A" text-anchor="start">MS6</text>
+<path d="M1286.0 87.0 L1286.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1196" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="1286.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">7 Documentation</text>
+<path d="M1204 164 L1204 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M1204 234.0 L1212 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1212" y="194" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="1220" y="212" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">7.1 Requirements and</text>
+<text x="1220" y="227" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">plan</text>
+<text x="1220" y="264" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M1204 326.0 L1212 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1212" y="286" width="164" height="80" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="1220" y="304" font-size="12" font-weight="bold" fill="#72243E" text-anchor="start">7.2 Guides</text>
+<text x="1220" y="356" font-size="11" font-weight="normal" fill="#72243E" text-anchor="start">MS4</text>
+<path d="M1204 418.0 L1212 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1212" y="378" width="164" height="80" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="1220" y="396" font-size="12" font-weight="bold" fill="#27500A" text-anchor="start">7.3 Test reports</text>
+<text x="1220" y="448" font-size="11" font-weight="normal" fill="#27500A" text-anchor="start">MS6</text>
+<path d="M1204 510.0 L1212 510.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1212" y="470" width="164" height="80" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="1220" y="488" font-size="12" font-weight="bold" fill="#085041" text-anchor="start">7.4 Licenses</text>
+<text x="1220" y="540" font-size="11" font-weight="normal" fill="#085041" text-anchor="start">MS1</text>
+<path d="M1482.0 87.0 L1482.0 110" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1392" y="110" width="180" height="54" rx="6" fill="#FFFFFF" stroke="#444441" stroke-width="1"/>
+<text x="1482.0" y="142.0" font-size="13" font-weight="bold" fill="#2C2C2A" text-anchor="middle">8 Project management</text>
+<path d="M1400 164 L1400 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<path d="M1400 234.0 L1408 234.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1408" y="194" width="164" height="80" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="1416" y="212" font-size="12" font-weight="bold" fill="#444441" text-anchor="start">8.1 Planning</text>
+<text x="1416" y="264" font-size="11" font-weight="normal" fill="#444441" text-anchor="start">MS1–MS6</text>
+<path d="M1400 326.0 L1408 326.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1408" y="286" width="164" height="80" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="1416" y="304" font-size="12" font-weight="bold" fill="#444441" text-anchor="start">8.2 Releases</text>
+<text x="1416" y="356" font-size="11" font-weight="normal" fill="#444441" text-anchor="start">MS1–MS6</text>
+<path d="M1400 418.0 L1408 418.0" stroke="#888780" stroke-width="1" fill="none"/>
+<rect x="1408" y="378" width="164" height="80" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="1416" y="396" font-size="12" font-weight="bold" fill="#444441" text-anchor="start">8.3 Milestone reviews</text>
+<text x="1416" y="448" font-size="11" font-weight="normal" fill="#444441" text-anchor="start">MS1–MS6</text>
+<rect x="20" y="1219" width="16" height="16" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="44" y="1232" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS1 Proof of concept and planning</text>
+<rect x="20" y="1245" width="16" height="16" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="44" y="1258" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS2 Architecture and I2C libraries</text>
+<rect x="20" y="1271" width="16" height="16" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="44" y="1284" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS3 Wind, rain, particulate matter and lightning</text>
+<rect x="20" y="1297" width="16" height="16" rx="6" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+<text x="44" y="1310" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS4 Complete station on the bench</text>
+<rect x="540" y="1219" width="16" height="16" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+<text x="564" y="1232" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS5 Station installed</text>
+<rect x="540" y="1245" width="16" height="16" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+<text x="564" y="1258" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">MS6 Station validated</text>
+<rect x="540" y="1271" width="16" height="16" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="564" y="1284" font-size="12" font-weight="normal" fill="#2C2C2A" text-anchor="start">Across all milestones</text>
+</svg>
