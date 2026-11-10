@@ -6,7 +6,7 @@
 
 The editable source is [block-diagram.drawio](block-diagram.drawio) (open it with [diagrams.net](https://app.diagrams.net/)).
 
-This is a functional block diagram: each block shows a function, not a specific part. The parts, with their substitutes, are listed in the bill of materials. The only part named in the diagram is the ESP32-S3, because it is a project constraint (CON-01). The interface of each connection is written on the line.
+This is a functional block diagram: each block shows a function, not a specific part. The parts, with their substitutes, are listed in the [bill of materials](bom.md). The only part named in the diagram is the ESP32-S3, because it is a project constraint (CON-01). The interface of each connection is written on the line.
 
 Blocks are grouped by where they are installed:
 
