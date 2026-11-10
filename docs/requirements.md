@@ -147,7 +147,7 @@ Values marked *(to be confirmed)* still need to be checked against primary sourc
 | FR-CFG-04 | It shall be possible to set the reading interval of the slow sensors (FR-SMP-04). | D | T |
 | FR-CFG-05 | It shall be possible to set the station altitude, latitude and longitude. | E | T |
 | FR-CFG-06 | It shall be possible to set the time zone used by the web page. | E | T |
-| FR-CFG-07 | It shall be possible to set the wind and rain kit factors and the wind vane alignment to north. | E | T |
+| FR-CFG-07 | It shall be possible to set the wind and rain sensors factors and the wind vane alignment to north. | E | T |
 | FR-CFG-08 | It shall be possible to apply a correction (offset) to each quantity, for adjustments after field validation. | D | T |
 | FR-CFG-09 | It shall be possible to restore factory settings both with a physical button and from the web page. | E | T |
 | FR-CFG-10 | It shall be possible to export and import the configuration (JSON file). | D | T |
@@ -181,7 +181,7 @@ Reference: each sensor's specification. The figures below are typical datasheet 
 
 | ID | Requirement | Pri. | Ver. |
 |---|---|---|---|
-| NFR-ACC-01 | The accuracy of each quantity shall be the one specified by the sensor manufacturer, under the datasheet conditions. Reference values to confirm: SHT45 ±0.1 °C and ±1 %RH; BMP390 ±0.5 hPa absolute; anemometer and rain gauge as specified for the kit. | E | I |
+| NFR-ACC-01 | The accuracy of each quantity shall be the one specified by the sensor manufacturer, under the datasheet conditions. Reference values to confirm: SHT45 ±0.1 °C and ±1 %RH; BMP390 ±0.5 hPa absolute; anemometer and rain gauge as specified by their manufacturer. | E | I |
 | NFR-ACC-02 | Temperature and humidity shall be measured inside a ventilated radiation shield, away from heat sources in the station's own circuit. | E | I |
 | NFR-ACC-03 | Field validation shall compare trends and mean differences against INMET, CEPAGRI and the Viracopos airport METAR (SBKP), documenting the differences found. | E | A |
 | NFR-ACC-04 | Anemometer and wind vane installation shall follow, as far as possible, the height and obstacle clearance recommended by WMO Guide No. 8 (reference: 10 m above ground, to be confirmed), documenting the deviations of the actual site. | D | I |

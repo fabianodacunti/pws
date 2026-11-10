@@ -64,7 +64,7 @@ Each library has a portable C99 core, an ESP-IDF port, packaging as an ESP-IDF c
 | 2.4 | Light sensor library | VEML7700 | FR-MEA-07 |
 | 2.5 | UV sensor library | LTR390 | FR-MEA-08 |
 | 2.6 | RTC library | DS3231 | FR-TIM-01 |
-| 2.7 | Wind and rain sensor kit library | A single library with three modules: anemometer, wind vane and rain gauge | FR-MEA-04 to 06, FR-SMP-11 |
+| 2.7 | Wind and rain sensors library | A single library with three modules: anemometer, wind vane and rain gauge | FR-MEA-04 to 06, FR-SMP-11 |
 | 2.8 | Particulate matter sensor library | SPS30 or PMS5003 (to be decided) | FR-MEA-09, FR-SMP-10 |
 | 2.9 | Lightning sensor library | AS3935 | FR-MEA-10, FR-MEA-11 |
 
@@ -100,7 +100,7 @@ Each library has a portable C99 core, an ESP-IDF port, packaging as an ESP-IDF c
 |---|---|---|---|
 | 5.1 | Radiation shield | Ventilated shield for temperature and humidity | NFR-ACC-02, CON-07 |
 | 5.2 | Enclosure and cabling | IP65 enclosure with cable glands and external cable routing | NFR-ENV-02, 04 |
-| 5.3 | Mast and mounts | Mast, wind and rain kit mount, grounding | NFR-ACC-04, NFR-ENV-05 |
+| 5.3 | Mast and mounts | Mast, wind and rain sensors mount, grounding | NFR-ACC-04, NFR-ENV-05 |
 | 5.4 | Site and installation | Site selection, installation and wind vane alignment to north | NFR-ENV-01, FR-CFG-07 |
 
 ### 6 Validation
