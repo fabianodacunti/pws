@@ -258,7 +258,7 @@ Reference: each sensor's specification. The figures below are typical datasheet 
 | NFR-DOC-01 | The repository shall include a bill of materials with items, quantities and substitutes, without suppliers. | E | I |
 | NFR-DOC-02 | Each module shall have a simplified test report. | E | I |
 | NFR-DOC-03 | *Removed: covered by constraints CON-03 and CON-07.* | — | — |
-| NFR-DOC-04 | Firmware and libraries under the MIT license; hardware under CERN-OHL v2; mechanical parts under CERN-OHL or CC BY-SA 4.0. | E | I |
+| NFR-DOC-04 | Firmware and libraries under the MIT license; hardware and mechanical parts under CERN-OHL-P v2; documentation under CC BY 4.0. | E | I |
 
 ---
 
