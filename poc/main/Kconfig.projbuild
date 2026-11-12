@@ -1,0 +1,17 @@
+menu "PWS proof of concept"
+
+    config POC_I2C_SDA_GPIO
+        int "I2C SDA GPIO"
+        range 0 48
+        default 8
+        help
+            GPIO connected to the SDA line of the sensor modules.
+
+    config POC_I2C_SCL_GPIO
+        int "I2C SCL GPIO"
+        range 0 48
+        default 9
+        help
+            GPIO connected to the SCL line of the sensor modules.
+
+endmenu
