@@ -16,7 +16,7 @@ Blocks are grouped by where they are installed:
 - **Enclosure top, under a window:** lux meter and UV radiometer, which need a view of the sky.
 - **Electronics enclosure (IP65):** microcontroller, real-time clock, barometer, lightning detector, SD card, factory reset button, RGB status LED and power supply.
 - **Local network:** router, MQTT broker and Home Assistant, browsers (web page and API).
-- **Internet:** Weather Underground and Windy. The station works without internet access; only these uploads depend on it.
+- **Internet:** Weather Underground, Windy and NTP time servers. The station works without internet access; only these uploads and the clock synchronization depend on it, and the real-time clock keeps the time meanwhile.
 
 All I2C devices share one I2C bus at 3.3 V.
 

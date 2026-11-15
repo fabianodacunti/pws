@@ -57,7 +57,7 @@ Values marked *(to be confirmed)* still need to be checked against primary sourc
 | FR-SMP-03 | Rain shall be recorded by interrupt, with the timestamp of each tip. | E | T |
 | FR-SMP-04 | Temperature, humidity, pressure, light, UV and particulate matter shall be read periodically, at a configurable interval (default 10 s). | E | T |
 | FR-SMP-05 | For each publishing interval, the station shall compute mean, minimum and maximum of temperature, humidity and pressure. | E | A |
-| FR-SMP-06 | For each publishing interval, the station shall compute the mean wind speed and the gust (highest mean over a short window; 3 s according to WMO Guide No. 8, to be confirmed). | E | A |
+| FR-SMP-06 | For each publishing interval, the station shall compute the mean wind speed and the gust (highest mean over a short window; 3 s according to WMO Guide No. 8). | E | A |
 | FR-SMP-07 | The mean wind direction shall be computed as a vector average (not an arithmetic one, which fails around north). | E | A |
 | FR-SMP-08 | The station shall report the gust direction. | D | A |
 | FR-SMP-09 | For each interval, the station shall report the rain amount in that interval. | E | A |
@@ -184,7 +184,7 @@ Reference: each sensor's specification. The figures below are typical datasheet 
 | NFR-ACC-01 | The accuracy of each quantity shall be the one specified by the sensor manufacturer, under the datasheet conditions. Reference values to confirm: SHT45 ±0.1 °C and ±1 %RH; BMP390 ±0.5 hPa absolute; anemometer and rain gauge as specified by their manufacturer. | E | I |
 | NFR-ACC-02 | Temperature and humidity shall be measured inside a ventilated radiation shield, away from heat sources in the station's own circuit. | E | I |
 | NFR-ACC-03 | Field validation shall compare trends and mean differences against INMET, CEPAGRI and the Viracopos airport METAR (SBKP), documenting the differences found. | E | A |
-| NFR-ACC-04 | Anemometer and wind vane installation shall follow, as far as possible, the height and obstacle clearance recommended by WMO Guide No. 8 (reference: 10 m above ground, to be confirmed), documenting the deviations of the actual site. | D | I |
+| NFR-ACC-04 | Anemometer and wind vane installation shall follow, as far as possible, the height and obstacle clearance recommended by WMO Guide No. 8 (reference: 10 m above ground, the WMO definition of surface wind), documenting the deviations of the actual site. | D | I |
 
 ### 2.2 Performance and timing (NFR-PRF)
 
