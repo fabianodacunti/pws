@@ -1,28 +1,50 @@
-/*
- * PWS proof of concept.
+/*******************************************************************************
+ * @file   main.c
+ * @brief  PWS proof of concept: application entry point.
  *
- * Step 1: start the I2C bus and scan it, printing the address of every
- * device that answers. The sensor modules used in the proof of concept
- * should show up at their datasheet addresses.
- */
+ * Starts the I2C bus and scans it, printing the address of every device
+ * that answers. Then reads the sensors in a loop and prints the readings.
+ *
+ * @author Fabiano Bozzi D'Acunti
+ * @copyright SPDX-License-Identifier: MIT
+ ******************************************************************************/
 
+#include <stdbool.h>
 #include <stdio.h>
 
 #include "driver/i2c_master.h"
 #include "esp_err.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
-#define I2C_SDA_GPIO        CONFIG_POC_I2C_SDA_GPIO
-#define I2C_SCL_GPIO        CONFIG_POC_I2C_SCL_GPIO
-#define I2C_PROBE_TIMEOUT_MS 50
+#include "sht45.h"
 
-/* 7-bit addresses outside this range are reserved by the I2C specification. */
-#define I2C_FIRST_ADDRESS   0x08
-#define I2C_LAST_ADDRESS    0x77
+/** @brief GPIO of the I2C SDA line, chosen in menuconfig. */
+#define I2C_SDA_GPIO (CONFIG_POC_I2C_SDA_GPIO)
 
+/** @brief GPIO of the I2C SCL line, chosen in menuconfig. */
+#define I2C_SCL_GPIO (CONFIG_POC_I2C_SCL_GPIO)
+
+/** @brief Time to wait for an answer from each address during the scan, in ms. */
+#define I2C_PROBE_TIMEOUT_MS (50)
+
+/** @brief First address scanned. Lower 7-bit addresses are reserved by the I2C specification. */
+#define I2C_FIRST_ADDRESS (0x08)
+
+/** @brief Last address scanned. Higher 7-bit addresses are reserved by the I2C specification. */
+#define I2C_LAST_ADDRESS (0x77)
+
+/** @brief Interval between two rounds of readings, in ms. */
+#define READ_INTERVAL_MS (2000U)
+
+/**
+ * @brief Creates the I2C master bus on the configured pins.
+ * @return Handle of the bus. The program stops if the bus cannot be created.
+ */
 static i2c_master_bus_handle_t i2c_bus_start(void)
 {
     const i2c_master_bus_config_t config = {
-        .i2c_port = -1,                     /* let the driver pick a free port */
+        .i2c_port = -1, /* let the driver pick a free port */
         .sda_io_num = I2C_SDA_GPIO,
         .scl_io_num = I2C_SCL_GPIO,
         .clk_source = I2C_CLK_SRC_DEFAULT,
@@ -30,12 +52,18 @@ static i2c_master_bus_handle_t i2c_bus_start(void)
         .flags.enable_internal_pullup = true, /* the modules have their own pull-ups; this is a fallback */
     };
 
-    i2c_master_bus_handle_t bus;
+    i2c_master_bus_handle_t bus = NULL;
     ESP_ERROR_CHECK(i2c_new_master_bus(&config, &bus));
     return bus;
 }
 
-/* Prints a table like the Linux i2cdetect tool: one row per 16 addresses. */
+/**
+ * @brief Probes every valid address and prints a table of the devices found.
+ *
+ * The table has the same layout as the Linux i2cdetect tool: one row per 16 addresses.
+ *
+ * @param[in] bus I2C master bus to scan.
+ */
 static void i2c_bus_scan(i2c_master_bus_handle_t bus)
 {
     int found = 0;
@@ -54,12 +82,13 @@ static void i2c_bus_scan(i2c_master_bus_handle_t bus)
                 continue;
             }
 
-            esp_err_t err = i2c_master_probe(bus, address, I2C_PROBE_TIMEOUT_MS);
+            esp_err_t err = i2c_master_probe(bus, (uint16_t)address, I2C_PROBE_TIMEOUT_MS);
             if (err == ESP_OK) {
                 printf("%02x ", address);
                 found++;
             } else {
                 printf("-- ");
+                /* A timeout, instead of a plain "no answer", points to a wiring problem. */
                 if (err == ESP_ERR_TIMEOUT) {
                     timeouts++;
                 }
@@ -74,8 +103,27 @@ static void i2c_bus_scan(i2c_master_bus_handle_t bus)
     }
 }
 
+/**
+ * @brief Application entry point, called by ESP-IDF after startup.
+ */
 void app_main(void)
 {
     i2c_master_bus_handle_t bus = i2c_bus_start();
     i2c_bus_scan(bus);
+
+    ESP_ERROR_CHECK(sht45_init(bus));
+
+    while (true) {
+        float temperature = 0.0f;
+        float humidity = 0.0f;
+
+        esp_err_t err = sht45_read(&temperature, &humidity);
+        if (err == ESP_OK) {
+            printf("SHT45: %.2f C, %.1f %%RH\n", temperature, humidity);
+        } else {
+            printf("SHT45: read error (%s)\n", esp_err_to_name(err));
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
+    }
 }
