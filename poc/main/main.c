@@ -18,6 +18,7 @@
 #include "freertos/task.h"
 
 #include "bmp390.h"
+#include "ltr390.h"
 #include "sht45.h"
 #include "veml7700.h"
 
@@ -131,6 +132,12 @@ void app_main(void)
         printf("VEML7700: init error (%s)\n", esp_err_to_name(err));
     }
 
+    /* Initialize the LTR390 (ultraviolet light sensor). */
+    err = ltr390_init(bus);
+    if (err != ESP_OK) {
+        printf("LTR390: init error (%s)\n", esp_err_to_name(err));
+    }
+
     while (true) {
         /* Read the SHT45 (temperature and relative humidity). */
         float temperature = 0.0f;
@@ -162,6 +169,16 @@ void app_main(void)
             printf("VEML7700: %.1f lx\n", illuminance);
         } else {
             printf("VEML7700: read error (%s)\n", esp_err_to_name(err));
+        }
+
+        /* Read the LTR390 (UV index). */
+        float uv_index = 0.0f;
+
+        err = ltr390_read(&uv_index);
+        if (err == ESP_OK) {
+            printf("LTR390: UV index %.1f\n", uv_index);
+        } else {
+            printf("LTR390: read error (%s)\n", esp_err_to_name(err));
         }
 
         vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
