@@ -17,6 +17,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#include "bmp390.h"
 #include "sht45.h"
 
 /** @brief GPIO of the I2C SDA line, chosen in menuconfig. */
@@ -111,17 +112,39 @@ void app_main(void)
     i2c_master_bus_handle_t bus = i2c_bus_start();
     i2c_bus_scan(bus);
 
-    ESP_ERROR_CHECK(sht45_init(bus));
+    /* Initialize the SHT45 (temperature and relative humidity sensor). */
+    esp_err_t err = sht45_init(bus);
+    if (err != ESP_OK) {
+        printf("SHT45: init error (%s)\n", esp_err_to_name(err));
+    }
+
+    /* Initialize the BMP390 (barometric pressure sensor). */
+    err = bmp390_init(bus, BMP390_ADDRESS_SDO_HIGH);
+    if (err != ESP_OK) {
+        printf("BMP390: init error (%s)\n", esp_err_to_name(err));
+    }
 
     while (true) {
+        /* Read the SHT45 (temperature and relative humidity). */
         float temperature = 0.0f;
         float humidity = 0.0f;
 
-        esp_err_t err = sht45_read(&temperature, &humidity);
+        err = sht45_read(&temperature, &humidity);
         if (err == ESP_OK) {
             printf("SHT45: %.2f C, %.1f %%RH\n", temperature, humidity);
         } else {
             printf("SHT45: read error (%s)\n", esp_err_to_name(err));
+        }
+
+        /* Read the BMP390 (barometric pressure). */
+        float pressure = 0.0f;
+        float chip_temperature = 0.0f;
+
+        err = bmp390_read(&pressure, &chip_temperature);
+        if (err == ESP_OK) {
+            printf("BMP390: %.2f hPa (chip at %.2f C)\n", pressure, chip_temperature);
+        } else {
+            printf("BMP390: read error (%s)\n", esp_err_to_name(err));
         }
 
         vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
