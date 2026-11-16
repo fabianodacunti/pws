@@ -6,8 +6,8 @@
  * with one fixed gain and integration time, and each call returns the latest
  * illuminance, in lux.
  *
- * The fixed range is chosen by the macros at the top of veml7700.c, which
- * also list the other ranges that can be tried.
+ * The fixed range is chosen by the RANGE macro in veml7700.c, where the
+ * available ranges are listed.
  *
  * @note   Singleton: the module handles a single sensor. Call veml7700_init()
  *         once before veml7700_read().
