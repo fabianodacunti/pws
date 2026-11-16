@@ -19,6 +19,7 @@
 
 #include "bmp390.h"
 #include "sht45.h"
+#include "veml7700.h"
 
 /** @brief GPIO of the I2C SDA line, chosen in menuconfig. */
 #define I2C_SDA_GPIO (CONFIG_POC_I2C_SDA_GPIO)
@@ -124,6 +125,12 @@ void app_main(void)
         printf("BMP390: init error (%s)\n", esp_err_to_name(err));
     }
 
+    /* Initialize the VEML7700 (ambient light sensor). */
+    err = veml7700_init(bus);
+    if (err != ESP_OK) {
+        printf("VEML7700: init error (%s)\n", esp_err_to_name(err));
+    }
+
     while (true) {
         /* Read the SHT45 (temperature and relative humidity). */
         float temperature = 0.0f;
@@ -145,6 +152,16 @@ void app_main(void)
             printf("BMP390: %.2f hPa (chip at %.2f C)\n", pressure, chip_temperature);
         } else {
             printf("BMP390: read error (%s)\n", esp_err_to_name(err));
+        }
+
+        /* Read the VEML7700 (illuminance). */
+        float illuminance = 0.0f;
+
+        err = veml7700_read(&illuminance);
+        if (err == ESP_OK) {
+            printf("VEML7700: %.1f lx\n", illuminance);
+        } else {
+            printf("VEML7700: read error (%s)\n", esp_err_to_name(err));
         }
 
         vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
