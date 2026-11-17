@@ -49,5 +49,5 @@ Datasheets and revisions used by the code:
 - Sensirion, [SHT4x datasheet](https://sensirion.com/products/catalog/SHT45), version 7.3.
 - Bosch Sensortec, [BMP390 datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp390-ds002.pdf), BST-BMP390-DS002, revision 1.7.
 - Vishay, [VEML7700 datasheet](https://www.vishay.com/docs/84286/veml7700.pdf), revision 1.8, and [application note](https://www.vishay.com/docs/84323/designingveml7700.pdf), document 84323.
-- Lite-On, LTR-390UV-01 datasheet, version 1.1. Copies of this version disagree on the UV sensitivity (2300 or 1810 counts per UV index), which has to be settled at the bench.
+- Lite-On, [LTR-390UV-01 datasheet](https://optoelectronics.liteon.com/upload/download/DS86-2015-0004/LTR-390UV-01_Final_%20DS_V1.4.PDF), version 1.4 (2021). Older editions give other values for the UV sensitivity (1810 and 2300 counts per UV index), so check the revision of any copy of this datasheet before using it.
 - NXP, [I2C-bus specification and user manual](https://www.nxp.com/docs/en/user-guide/UM10204.pdf), UM10204, revision 7.0.
