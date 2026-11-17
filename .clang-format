@@ -1,0 +1,40 @@
+# C formatting rules for the C code of the project.
+BasedOnStyle: LLVM
+Language: Cpp
+
+# Layout
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 120
+MaxEmptyLinesToKeep: 1
+IndentCaseLabels: false
+
+# Braces: K&R / Linux kernel style. Function braces on their own line,
+# control statement braces on the same line, "} else {" on one line.
+BreakBeforeBraces: Linux
+InsertBraces: true
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+
+# Keep function signatures and calls on one line whenever they fit.
+BinPackParameters: true
+BinPackArguments: true
+AllowAllParametersOfDeclarationOnNextLine: false
+PenaltyBreakBeforeFirstCallParameter: 1000
+PenaltyReturnTypeOnItsOwnLine: 1000
+AlignAfterOpenBracket: Align
+
+# Alignment
+PointerAlignment: Right
+AlignConsecutiveMacros: Consecutive
+AlignTrailingComments: true
+SpaceAfterCStyleCast: false
+
+# Includes keep the order written by the author (grouped by origin).
+SortIncludes: Never
+
+# Do not reflow comments: file headers and Doxygen blocks are laid out by hand.
+ReflowComments: false
