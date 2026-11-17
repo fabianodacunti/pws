@@ -2,7 +2,7 @@
  * @file   ltr390.c
  * @brief  Lite-On LTR390 ultraviolet light sensor.
  *
- * Reference: Lite-On LTR-390UV-01 datasheet, version 1.1.
+ * Reference: Lite-On LTR-390UV-01 datasheet, version 1.4.
  *
  * The sensor is used with gain 18 and 20-bit resolution, the only setting
  * for which the datasheet gives the UV sensitivity.
@@ -65,12 +65,12 @@
 #define FIRST_MEASURE_WAIT_MS (600U)
 
 /**
- * @brief Counts that correspond to one unit of UV index, with gain 18 and 20 bits.
+ * @brief Counts that correspond to one unit of UV index, with gain 18, 20 bits and no window in front of the sensor.
  *
- * Copies of the datasheet version 1.1 disagree on this value: some give 2300 and others 1810. To be confirmed at
- * the bench, against the official UV index of the day.
+ * Value of the current datasheet (version 1.4, 2021). Earlier editions gave other values (2300 in 2015, and 1810 in
+ * an early draft), so old copies of the datasheet lead to different UV indexes.
  */
-#define UV_SENSITIVITY (2300.0f)
+#define UV_SENSITIVITY (1400.0f)
 
 /** @brief Handle of the sensor on the I2C bus. NULL until ltr390_init() succeeds. */
 static i2c_master_dev_handle_t ltr390_dev = NULL;
