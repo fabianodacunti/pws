@@ -14,4 +14,42 @@ menu "PWS proof of concept"
         help
             GPIO connected to the SCL line of the sensor modules.
 
+    menu "Sensors"
+
+        config POC_SENSOR_SHT45
+            bool "SHT45 (temperature and humidity)"
+            default y
+            help
+                Disable it if the module is not connected.
+
+        config POC_SENSOR_BMP390
+            bool "BMP390 (pressure)"
+            default y
+            help
+                Disable it if the module is not connected.
+
+        config POC_BMP390_I2C_ADDRESS
+            hex "BMP390 I2C address"
+            depends on POC_SENSOR_BMP390
+            range 0x76 0x77
+            default 0x77
+            help
+                Most modules pull the SDO pin high (0x77). Use 0x76 if the
+                I2C scan shows the sensor at that address.
+
+        config POC_SENSOR_VEML7700
+            bool "VEML7700 (illuminance)"
+            default y
+            help
+                Disable it if the module is not connected.
+
+        config POC_SENSOR_LTR390
+            bool "LTR390 (UV index)"
+            default y
+            help
+                The UV module is optional in the proof of concept. Disable
+                it if the module is not connected.
+
+    endmenu
+
 endmenu

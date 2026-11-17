@@ -3,7 +3,8 @@
  * @brief  PWS proof of concept: application entry point.
  *
  * Starts the I2C bus and scans it, printing the address of every device
- * that answers. Then reads the sensors in a loop and prints the readings.
+ * that answers. Then reads the sensors enabled in menuconfig in a loop and
+ * prints the readings.
  *
  * @author Fabiano Bozzi D'Acunti
  * @copyright SPDX-License-Identifier: MIT
@@ -108,37 +109,53 @@ static void i2c_bus_scan(i2c_master_bus_handle_t bus)
 
 /**
  * @brief Application entry point, called by ESP-IDF after startup.
+ *
+ * Starts the I2C bus, initializes the sensors enabled in menuconfig and then reads them forever. A sensor that
+ * fails to start or to read is reported and does not stop the others.
  */
 void app_main(void)
 {
     i2c_master_bus_handle_t bus = i2c_bus_start();
     i2c_bus_scan(bus);
 
+    /* Result of every sensor call below. Unused when every sensor is disabled in menuconfig. */
+    esp_err_t err = ESP_OK;
+    (void)err;
+
+#if CONFIG_POC_SENSOR_SHT45
     /* Initialize the SHT45 (temperature and relative humidity sensor). */
-    esp_err_t err = sht45_init(bus);
+    err = sht45_init(bus);
     if (err != ESP_OK) {
         printf("SHT45: init error (%s)\n", esp_err_to_name(err));
     }
+#endif
 
+#if CONFIG_POC_SENSOR_BMP390
     /* Initialize the BMP390 (barometric pressure sensor). */
-    err = bmp390_init(bus, BMP390_ADDRESS_SDO_HIGH);
+    err = bmp390_init(bus, CONFIG_POC_BMP390_I2C_ADDRESS);
     if (err != ESP_OK) {
         printf("BMP390: init error (%s)\n", esp_err_to_name(err));
     }
+#endif
 
+#if CONFIG_POC_SENSOR_VEML7700
     /* Initialize the VEML7700 (ambient light sensor). */
     err = veml7700_init(bus);
     if (err != ESP_OK) {
         printf("VEML7700: init error (%s)\n", esp_err_to_name(err));
     }
+#endif
 
+#if CONFIG_POC_SENSOR_LTR390
     /* Initialize the LTR390 (ultraviolet light sensor). */
     err = ltr390_init(bus);
     if (err != ESP_OK) {
         printf("LTR390: init error (%s)\n", esp_err_to_name(err));
     }
+#endif
 
     while (true) {
+#if CONFIG_POC_SENSOR_SHT45
         /* Read the SHT45 (temperature and relative humidity). */
         float temperature = 0.0f;
         float humidity = 0.0f;
@@ -149,7 +166,9 @@ void app_main(void)
         } else {
             printf("SHT45: read error (%s)\n", esp_err_to_name(err));
         }
+#endif
 
+#if CONFIG_POC_SENSOR_BMP390
         /* Read the BMP390 (barometric pressure). */
         float pressure = 0.0f;
         float chip_temperature = 0.0f;
@@ -160,7 +179,9 @@ void app_main(void)
         } else {
             printf("BMP390: read error (%s)\n", esp_err_to_name(err));
         }
+#endif
 
+#if CONFIG_POC_SENSOR_VEML7700
         /* Read the VEML7700 (illuminance). */
         float illuminance = 0.0f;
 
@@ -170,7 +191,9 @@ void app_main(void)
         } else {
             printf("VEML7700: read error (%s)\n", esp_err_to_name(err));
         }
+#endif
 
+#if CONFIG_POC_SENSOR_LTR390
         /* Read the LTR390 (UV index). */
         float uv_index = 0.0f;
 
@@ -180,6 +203,7 @@ void app_main(void)
         } else {
             printf("LTR390: read error (%s)\n", esp_err_to_name(err));
         }
+#endif
 
         vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
     }
