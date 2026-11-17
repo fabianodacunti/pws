@@ -14,6 +14,15 @@ menu "PWS proof of concept"
         help
             GPIO connected to the SCL line of the sensor modules.
 
+    config POC_DASHBOARD_ANSI
+        bool "Dashboard with ANSI codes"
+        default y
+        help
+            Redraws the dashboard in the same place of the terminal, using
+            ANSI escape codes. Turn it off if your terminal does not
+            understand them (you would see strange characters): each round
+            of readings is then printed as a new block of lines.
+
     menu "Sensors"
 
         config POC_SENSOR_SHT45

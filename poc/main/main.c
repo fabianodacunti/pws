@@ -19,6 +19,7 @@
 #include "freertos/task.h"
 
 #include "bmp390.h"
+#include "dashboard.h"
 #include "ltr390.h"
 #include "sht45.h"
 #include "veml7700.h"
@@ -40,6 +41,9 @@
 
 /** @brief Interval between two rounds of readings, in ms. */
 #define READ_INTERVAL_MS (2000U)
+
+/** @brief Time the I2C scan and the sensor messages stay on screen before the dashboard starts, in ms. */
+#define DASHBOARD_DELAY_MS (5000U)
 
 /**
  * @brief Creates the I2C master bus on the configured pins.
@@ -110,15 +114,15 @@ static void i2c_bus_scan(i2c_master_bus_handle_t bus)
 /**
  * @brief Application entry point, called by ESP-IDF after startup.
  *
- * Starts the I2C bus, initializes the sensors enabled in menuconfig and then reads them forever. A sensor that
- * fails to start or to read is reported and does not stop the others.
+ * Starts the I2C bus, initializes the sensors enabled in menuconfig and then reads them forever, showing the readings
+ * in a terminal dashboard. A sensor that fails to start or to read is reported and does not stop the others.
  */
 void app_main(void)
 {
     i2c_master_bus_handle_t bus = i2c_bus_start();
     i2c_bus_scan(bus);
 
-    /* Result of every sensor call below. Unused when every sensor is disabled in menuconfig. */
+    /* Result of each sensor initialization. Unused when every sensor is disabled in menuconfig. */
     esp_err_t err = ESP_OK;
     (void)err;
 
@@ -154,57 +158,43 @@ void app_main(void)
     }
 #endif
 
+    /* Gives time to read the scan and any initialization error before the dashboard takes over the screen. */
+    printf("\nStarting the dashboard in %u s...\n", DASHBOARD_DELAY_MS / 1000U);
+    vTaskDelay(pdMS_TO_TICKS(DASHBOARD_DELAY_MS));
+    dashboard_start();
+
+    /* A sensor disabled in menuconfig is never read, so it keeps this status. */
+    readings_t readings = {
+        .sht45_status = SENSOR_DISABLED,
+        .bmp390_status = SENSOR_DISABLED,
+        .veml7700_status = SENSOR_DISABLED,
+        .ltr390_status = SENSOR_DISABLED,
+    };
+
     while (true) {
 #if CONFIG_POC_SENSOR_SHT45
         /* Read the SHT45 (temperature and relative humidity). */
-        float temperature = 0.0f;
-        float humidity = 0.0f;
-
-        err = sht45_read(&temperature, &humidity);
-        if (err == ESP_OK) {
-            printf("SHT45: %.2f C, %.1f %%RH\n", temperature, humidity);
-        } else {
-            printf("SHT45: read error (%s)\n", esp_err_to_name(err));
-        }
+        readings.sht45_status = sht45_read(&readings.temperature_c, &readings.humidity_pct);
 #endif
 
 #if CONFIG_POC_SENSOR_BMP390
-        /* Read the BMP390 (barometric pressure). */
-        float pressure = 0.0f;
+        /* Read the BMP390 (barometric pressure). The chip temperature is not shown, so it goes to a spare variable. */
         float chip_temperature = 0.0f;
 
-        err = bmp390_read(&pressure, &chip_temperature);
-        if (err == ESP_OK) {
-            printf("BMP390: %.2f hPa (chip at %.2f C)\n", pressure, chip_temperature);
-        } else {
-            printf("BMP390: read error (%s)\n", esp_err_to_name(err));
-        }
+        readings.bmp390_status = bmp390_read(&readings.pressure_hpa, &chip_temperature);
 #endif
 
 #if CONFIG_POC_SENSOR_VEML7700
         /* Read the VEML7700 (illuminance). */
-        float illuminance = 0.0f;
-
-        err = veml7700_read(&illuminance);
-        if (err == ESP_OK) {
-            printf("VEML7700: %.1f lx\n", illuminance);
-        } else {
-            printf("VEML7700: read error (%s)\n", esp_err_to_name(err));
-        }
+        readings.veml7700_status = veml7700_read(&readings.illuminance_lux);
 #endif
 
 #if CONFIG_POC_SENSOR_LTR390
         /* Read the LTR390 (UV index). */
-        float uv_index = 0.0f;
-
-        err = ltr390_read(&uv_index);
-        if (err == ESP_OK) {
-            printf("LTR390: UV index %.1f\n", uv_index);
-        } else {
-            printf("LTR390: read error (%s)\n", esp_err_to_name(err));
-        }
+        readings.ltr390_status = ltr390_read(&readings.uv_index);
 #endif
 
+        dashboard_draw(&readings);
         vTaskDelay(pdMS_TO_TICKS(READ_INTERVAL_MS));
     }
 }
